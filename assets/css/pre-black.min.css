@@ -1227,6 +1227,12 @@ p {
 .c-chronology .chronology-box {
   display: flex;
   align-items: center;
+  flex-direction: column;
+}
+@media (min-width: 1200px) {
+  .c-chronology .chronology-box {
+    flex-direction: row;
+  }
 }
 .c-chronology .chronology-box-content {
   margin: 0px 24px;
@@ -1246,15 +1252,27 @@ p {
   height: 100px;
   width: 100px;
   margin: 0px 8px;
-  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border-radius: 5px;
+}
+.c-chronology .chronology-box-alarm_mob {
+  height: 45px;
+  margin: 10px 0px;
+  display: flex;
+  flex-direction: row;
+}
+.c-chronology .chronology-box-alarm_mob:first-child {
+  margin-top: 0px;
 }
 .c-chronology .chronology-number {
   color: #FFF;
   font-size: 30px;
   font-weight: 700;
+}
+.c-chronology .chronology-number_mob {
+  margin-right: 8px;
 }
 .c-chronology .chronology-describe {
   color: #FFF;
@@ -1270,6 +1288,12 @@ p {
   font-size: 18px;
   border-radius: 5px;
   border: none;
+  margin-top: 16px;
+}
+@media (min-width: 1200px) {
+  .c-chronology .chronology-lembrete {
+    margin-top: 0px;
+  }
 }
 
 .c-marcas {
@@ -1328,29 +1352,52 @@ p {
   padding: 60px 0px;
 }
 .c-forms .forms-box-cadastre {
-  background-color: #3A3A3A;
-  min-height: 400px;
-  padding: 0px 120px;
+  background-color: #161616;
+  min-height: 300px;
+  padding: 0px 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+@media (min-width: 1200px) {
+  .c-forms .forms-box-cadastre {
+    min-height: 400px;
+    padding: 0px 120px;
+    background-color: #3A3A3A;
+  }
 }
 .c-forms .forms-title {
   color: #FFF;
   font-size: 30px;
   font-weight: 600;
   padding-bottom: 16px;
+  text-align: center;
+}
+@media (min-width: 1200px) {
+  .c-forms .forms-title {
+    text-align: start;
+  }
 }
 .c-forms .forms-describe {
   color: #fff;
-  text-align: justify;
+  text-align: center;
   font-size: 18px;
+}
+@media (min-width: 1200px) {
+  .c-forms .forms-describe {
+    text-align: justify;
+  }
 }
 .c-forms .forms-box-preencha {
   background-color: #161616;
-  padding: 0px 120px;
+  padding: 20px 20px 60px 20px;
   display: flex;
   align-items: center;
+}
+@media (min-width: 1200px) {
+  .c-forms .forms-box-preencha {
+    padding: 0px 120px;
+  }
 }
 .c-forms .forms-input__text {
   margin-bottom: 24px;
@@ -1367,6 +1414,29 @@ p {
   background: none;
   border: 1px solid #939393;
   color: #939393;
+}
+.c-forms .forms-input__send {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+.c-forms .forms-input__send button {
+  background-color: #00DF5E;
+  font-size: 20px;
+  color: #000;
+  font-weight: 700;
+  border: none;
+  width: 90%;
+  height: 40px;
+}
+.c-forms .text-checkbox {
+  color: #939393;
+  margin-left: 8px;
+}
+.c-forms .text-checkbox a {
+  color: #939393;
+  text-decoration: underline;
 }
 
 .c-app {
