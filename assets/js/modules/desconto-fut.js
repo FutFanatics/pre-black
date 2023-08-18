@@ -1,8 +1,4 @@
 (function($){
-
-	var containerking= $('.slick__king')
-	var containerwin = $(".win__slick")
-	var containerdetails = $(".slick__details")
 	var containerCupom = $(".slick__cupom")
 	var containerCopy = $(".slick__copy-cupom")
 	
@@ -40,50 +36,6 @@
 			
 			}]
 	});
-
-	containerwin.slick({
-		autoplay: false,
-		autoplaySpeed: 4000,
-		pauseOnFocus: false,
-		pauseOnHover: false,
-		arrows: false,
-		dots: false,
-		adaptiveHeight: true,
-		slidesToShow: 4,
-		slidesToScroll: 1,
-		responsive: [{
-			breakpoint: 768,
-			settings: {
-				slidesToShow: 1,
-				slidesToScroll: 1,
-
-						}
-			
-			}]
-	});
-
-	containerdetails.slick({
-		autoplay: false,
-		asNavFor: '.slick__details',
-		autoplaySpeed: 1000,
-		pauseOnFocus: false,
-		pauseOnHover: false,
-		arrows: false,
-		dots: false,
-		adaptiveHeight: true,
-		slidesToShow: 4,
-		slidesToScroll: 2,
-		responsive: [{
-			breakpoint: 768,
-			settings: {
-				slidesToShow: 2,
-				slidesToScroll: 2,
-				
-			}
-			
-			}]
-	});
-
 	
     var template_cupom =
 		'<div class="item">' +
@@ -121,7 +73,7 @@
 			var $elem = $(template_cupom);
 			console.log(cupom)
 
-			$elem.find('.copy-box-img').css(cupom.thumb);
+			$elem.find('.copy-box-img').css(cupom.thumb );
 			$elem.find('.rules-describe').text(cupom.regulation_general);
 			$elem.find('.copy-name_cupom').text(cupom.code);
 			$elem.find('.copy-percent').text(cupom.discount);
@@ -173,76 +125,7 @@
 		});
 	});
 
-	
-	
 
-	
-
-	
-
-
-
-	containerking.slick({
-		autoplay: false,
-		autoplaySpeed: 4000,
-		pauseOnFocus: false,
-		pauseOnHover: false,
-		arrows: true,
-		dots: false,
-		prevArrow: $('.slick-nav_king').find('.slick-prev'),
-        nextArrow: $('.slick-nav_king').find('.slick-next'),
-		adaptiveHeight: true,
-		slidesToShow: 5,
-		slidesToScroll: 1,
-		responsive: [{
-			breakpoint: 768,
-			settings: {
-				slidesToShow: 1,
-				slidesToScroll: 1,
-				dots:true,
-
-						}
-			
-			}]
-	}).on('afterChange', function(event, slick, currentSlide, nextSlide){
-		var current = currentSlide + 1;
-		$('.slick-nav_shirt').find('.slick-numbers .current').html(current < 10 ? "0" + current : current)}
-);
-
-	
-
-
-
-
-	
-    function multiSlideAdaptiveHeight(slider) {
-
-        var activeSlides = [];
-        var tallestSlide = 0;
-        
-        setTimeout(function() {
-        
-            $('.slick-track .slick-active', slider).each(function(item) {
-                activeSlides[item] = $(this).outerHeight();
-            });
-        
-            activeSlides.forEach(function(item) {
-            	if (item > tallestSlide) {
-					tallestSlide = item;
-				}
-			});
-        
-			$('.slick-list', slider).height(tallestSlide);
-        }, 10);
-    }
-
-
-	function isMobile() {
-		if (window.innerWidth > 991) {
-			return false;
-		}
-		return true;
-	}
 	
 
 })(jQuery);
