@@ -30,6 +30,7 @@ $color-third:#FFF;
 @import "pre-black/chronology";
 @import "pre-black/marcas";
 @import "pre-black/forms";
+@import "pre-black/app";
 @import "../fonts/icons-font";
 @mixin md{
     @media (min-width: 1200px) { @content; }

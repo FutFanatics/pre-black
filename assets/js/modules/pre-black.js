@@ -1,6 +1,6 @@
 (function($){
 	var containerMarcas = $(".marcas_slick")
-	var containerCopy = $(".app_slick")
+	var containerApp = $(".app_slick")
 	
 
 
