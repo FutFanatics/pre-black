@@ -1,0 +1,58 @@
+
+@mixin md{
+    @media (min-width: 1200px) { @content; }
+}
+
+.c-chronology{
+    background-color: $color-primary;
+    padding: 60px 0px;
+
+    .chronology{
+        &-box{
+            display: flex;
+            align-items: center;
+        }
+        &-box-content{
+            margin: 0px 24px;
+        }
+        &-title{
+            color: $color-third;
+            font-size: 30px;
+            display:none;
+            @include md{
+                display: block;
+            }
+        }
+        &-box-alarm{
+            background-color: #1F1F1F;
+            height: 100px;
+            width: 100px;
+            margin: 0px 8px;
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        &-number{
+            color: $color-third;
+            font-size: 30px;
+            font-weight: 700;
+        }
+        &-describe{
+            color: $color-third;
+            text-transform: uppercase;
+            font-size: 12px;
+        }
+
+        &-lembrete{
+            background-color: $color-secundary;
+            color: $color-primary;
+            width: 280px;
+            height: 50px;
+            font-weight: 700;
+            font-size: 18px;
+            border-radius: 5px;
+            border: none;
+        }
+    }
+}

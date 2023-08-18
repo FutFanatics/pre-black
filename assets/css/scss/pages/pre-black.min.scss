@@ -1,8 +1,16 @@
 
-//sass --watch assets/css/scss/pages/descontos-fut.min.scss:assets/css/descontos-fut.min.css
+//sass --watch assets/css/scss/pages/pre-black.min.scss:assets/css/pre-black.min.css
 
 $vitrine-blue: #192C53;
 $vitrine-gray: #747474;
+
+$color-primary:#000;
+$color-secundary:#00DF5E;
+$color-third:#FFF;
+
+*{
+    font-family: 'gotham';
+}
 
 //@import "../_lib/progressive.css";
 
@@ -18,10 +26,12 @@ $vitrine-gray: #747474;
 
 @import "../components/variables";
 
-@import "descontos-fut/home";
-@import "descontos-fut/copy";
-@import "descontos-fut/use";
+@import "pre-black/home";
+@import "pre-black/chronology";
+@import "pre-black/marcas";
+@import "pre-black/forms";
 @import "../fonts/icons-font";
 @mixin md{
     @media (min-width: 1200px) { @content; }
 }
+

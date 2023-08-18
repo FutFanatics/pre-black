@@ -1,0 +1,54 @@
+@mixin md{
+    @media (min-width: 1200px) { @content; }
+}
+
+.c-forms{
+    background-color: $color-primary;
+    padding: 60px 0px;
+    .forms{
+       &-box-cadastre{
+        background-color: #3A3A3A;
+        min-height: 400px;
+        padding: 0px 120px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        }
+        &-title{
+            color: $color-third;
+            font-size: 30px;
+            font-weight: 600;
+            padding-bottom: 16px;
+        }
+        &-describe{
+            color: #fff;
+            text-align: justify;
+            font-size: 18px;
+        }
+        &-box-preencha{
+            background-color: #161616;
+            padding: 0px 120px;
+            display: flex;
+            align-items: center;
+        }
+        &-input__text{
+            margin-bottom: 24px;
+
+            &:last-child{
+                margin-bottom: 0px;
+            }
+
+            input{
+                background: none;
+                border: none;
+                border-bottom: 1px #939393 solid;   
+            }
+            select{
+                background: none;
+                border: 1px solid  #939393;
+                color: #939393;
+            }
+        }
+    }
+    
+}
