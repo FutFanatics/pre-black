@@ -45,34 +45,38 @@
 			
 			}]
 	});
-	$(document).ready(function() {
-		// Lidar com o clique no botão
-		$('#btnCreateEvent').click(function() {
-			loadGoogleCalendarAPI();
-		});
-	});
 
-	// Carregar a API do Google Calendar
-	function loadGoogleCalendarAPI() {
-		gapi.load('client:auth2', initClient);
-	}
+	var apiKey = 'AIzaSyAib_P72mWWMzIZTkjayzLLHC14tZg-4GIY';
+	var clientId = '231657414073-bb6t0fall672213apmfcpsegoemkjrpm.apps.googleusercontent.com';
 
-	// Configurar as credenciais da API
-	function initClient() {
+	// Escopo da API do Google Agenda
+	var scope = 'https://www.googleapis.com/auth/calendar';
+
+	// ID do calendário (normalmente é 'primary' para o calendário padrão do usuário)
+	var calendarId = 'primary';
+
+	// Função de inicialização da API
+	function init() {
 		gapi.client.init({
-			apiKey: 'AIzaSyAib_P72mWWMzIZTkjayzLLHC14tZg-4GI',
-			clientId: '231657414073-bb6t0fall672213apmfcpsegoemkjrpm.apps.googleusercontent.com',
-			discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest'],
-			scope: 'https://www.googleapis.com/auth/calendar'
-		}).then(function () {
-			createEvent();
+			apiKey: apiKey,
+			clientId: clientId,
+			scope: scope,
+			discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"]
+		}).then(function() {
+			// Lidar com o clique no botão
+			document.getElementById('btnCreateEvent').addEventListener('click', createEvent);
 		});
 	}
 
+	// Carregar a API do Google Agenda
+	gapi.load('client:auth2', init);
+
+	// Função para criar o evento
 	function createEvent() {
 		var event = {
-			'summary': 'Lembrete Importante',
-			'description': 'Isso é um lembrete importante!',
+			'summary': 'Reunião Importante',
+			'location': 'Sala de Conferência 123',
+			'description': 'Uma reunião de trabalho muito importante.',
 			'start': {
 				'dateTime': '2023-11-20T09:00:00',
 				'timeZone': 'America/New_York'
@@ -83,13 +87,13 @@
 			}
 		};
 
-		gapi.client.calendar.events.insert({
-			'calendarId': 'primary',
+		var request = gapi.client.calendar.events.insert({
+			'calendarId': calendarId,
 			'resource': event
-		}).then(function(response) {
-			alert('Lembrete criado com sucesso no Google Agenda!');
-		}, function(error) {
-			alert('Ocorreu um erro ao criar o lembrete: ' + error.result.error.message);
+		});
+
+		request.execute(function(event) {
+			alert('Evento criado com sucesso! ID do evento: ' + event.id);
 		});
 	}
 	function multiSlideAdaptiveHeight(slider) {
