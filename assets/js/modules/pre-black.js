@@ -45,7 +45,53 @@
 			
 			}]
 	});
+	$(document).ready(function() {
+		// Lidar com o clique no botão
+		$('#btnCreateEvent').click(function() {
+			loadGoogleCalendarAPI();
+		});
+	});
 
+	// Carregar a API do Google Calendar
+	function loadGoogleCalendarAPI() {
+		gapi.load('client:auth2', initClient);
+	}
+
+	// Configurar as credenciais da API
+	function initClient() {
+		gapi.client.init({
+			apiKey: 'AIzaSyAib_P72mWWMzIZTkjayzLLHC14tZg-4GI',
+			clientId: '231657414073-bb6t0fall672213apmfcpsegoemkjrpm.apps.googleusercontent.com',
+			discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest'],
+			scope: 'https://www.googleapis.com/auth/calendar'
+		}).then(function () {
+			createEvent();
+		});
+	}
+
+	function createEvent() {
+		var event = {
+			'summary': 'Lembrete Importante',
+			'description': 'Isso é um lembrete importante!',
+			'start': {
+				'dateTime': '2023-11-20T09:00:00',
+				'timeZone': 'America/New_York'
+			},
+			'end': {
+				'dateTime': '2023-11-20T10:00:00',
+				'timeZone': 'America/New_York'
+			}
+		};
+
+		gapi.client.calendar.events.insert({
+			'calendarId': 'primary',
+			'resource': event
+		}).then(function(response) {
+			alert('Lembrete criado com sucesso no Google Agenda!');
+		}, function(error) {
+			alert('Ocorreu um erro ao criar o lembrete: ' + error.result.error.message);
+		});
+	}
 	function multiSlideAdaptiveHeight(slider) {
 
         var activeSlides = [];
