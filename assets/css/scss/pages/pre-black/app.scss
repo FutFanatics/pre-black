@@ -4,6 +4,7 @@
 
     .item{
         padding:0px 8px;
+        
         @include md{
             padding-right: 0px;
         }
