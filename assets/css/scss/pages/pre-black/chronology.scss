@@ -5,7 +5,7 @@
 
 .c-chronology{
     background-color: $color-primary;
-    padding: 60px 0px;
+    padding: 80px 0px 40px 0px;
 
     .chronology{
         &-box{
@@ -75,9 +75,15 @@
             border-radius: 5px;
             border: none;
             margin-top: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
             @include md{
                 margin-top: 0px;
+            }
+            &:hover{
+                text-decoration: none;
             }
         }
     }

@@ -47,7 +47,7 @@
             align-items: center;
 
             @include md{
-                padding: 0px 120px;
+                padding: 0px 0px;
             }
         }
         &-input__text{
@@ -59,13 +59,25 @@
 
             input{
                 background: none;
+                border-radius: 0px;
                 border: none;
                 border-bottom: 1px #939393 solid;   
+
+                &:focus{
+                    border-bottom: 1px solid #00DF5E;
+                }
             }
             select{
                 background: none;
-                border: 1px solid  #939393;
+                border: none;
+                border-bottom: 1px solid  #939393;
                 color: #939393;
+                border-radius: 0px;
+
+                
+                &:focus{
+                    border-bottom: 1px solid #00DF5E;
+                }
             }
         }
         &-input__send{
@@ -76,18 +88,20 @@
 
             button{
                 background-color: #00DF5E;
-                font-size: 20px;
+                font-size: 16px;
                 color: #000;
                 font-weight: 700;
                 border: none;
-                width: 90%;
-                height: 40px;
+                width: 100%;
+                border-radius: 5px;
+                height: 45px;
             }
         }
     }
     .text-checkbox{
         color: #939393;
         margin-left: 8px;
+        font-size: 13px;
 
         a{
             color:#939393;

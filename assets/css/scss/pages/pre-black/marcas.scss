@@ -1,6 +1,10 @@
 .c-marcas{
-    padding: 60px 0px;
+    padding: 20px 0px 60px 0px;
     background-color: $color-primary;
+
+    @include md{
+        padding: 60px 0px;
+    }
 
     .marcas{
         &-title{

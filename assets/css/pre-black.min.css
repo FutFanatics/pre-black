@@ -1214,15 +1214,21 @@ p {
 }
 
 .c-home {
-  background: url("https://cdn.futfanatics.com.br/futfanatics-nacional/paginas-personalizadas/pre-black/background-home.png");
-  min-height: 80vh;
+  background: url("https://cdn.futfanatics.com.br/futfanatics-nacional/paginas-personalizadas/pre-black/background-home_mob.png?v2");
+  min-height: 60vh;
   background-size: cover;
   background-position: center;
+}
+@media (min-width: 1200px) {
+  .c-home {
+    background: url("https://cdn.futfanatics.com.br/futfanatics-nacional/paginas-personalizadas/pre-black/background-home.png?v1");
+    background-position: center;
+  }
 }
 
 .c-chronology {
   background-color: #000;
-  padding: 60px 0px;
+  padding: 80px 0px 40px 0px;
 }
 .c-chronology .chronology-box {
   display: flex;
@@ -1289,16 +1295,27 @@ p {
   border-radius: 5px;
   border: none;
   margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 @media (min-width: 1200px) {
   .c-chronology .chronology-lembrete {
     margin-top: 0px;
   }
 }
+.c-chronology .chronology-lembrete:hover {
+  text-decoration: none;
+}
 
 .c-marcas {
-  padding: 60px 0px;
+  padding: 20px 0px 60px 0px;
   background-color: #000;
+}
+@media (min-width: 1200px) {
+  .c-marcas {
+    padding: 60px 0px;
+  }
 }
 .c-marcas .marcas-title {
   font-size: 42px;
@@ -1396,7 +1413,7 @@ p {
 }
 @media (min-width: 1200px) {
   .c-forms .forms-box-preencha {
-    padding: 0px 120px;
+    padding: 0px 0px;
   }
 }
 .c-forms .forms-input__text {
@@ -1407,13 +1424,22 @@ p {
 }
 .c-forms .forms-input__text input {
   background: none;
+  border-radius: 0px;
   border: none;
   border-bottom: 1px #939393 solid;
 }
+.c-forms .forms-input__text input:focus {
+  border-bottom: 1px solid #00DF5E;
+}
 .c-forms .forms-input__text select {
   background: none;
-  border: 1px solid #939393;
+  border: none;
+  border-bottom: 1px solid #939393;
   color: #939393;
+  border-radius: 0px;
+}
+.c-forms .forms-input__text select:focus {
+  border-bottom: 1px solid #00DF5E;
 }
 .c-forms .forms-input__send {
   width: 100%;
@@ -1423,16 +1449,18 @@ p {
 }
 .c-forms .forms-input__send button {
   background-color: #00DF5E;
-  font-size: 20px;
+  font-size: 16px;
   color: #000;
   font-weight: 700;
   border: none;
-  width: 90%;
-  height: 40px;
+  width: 100%;
+  border-radius: 5px;
+  height: 45px;
 }
 .c-forms .text-checkbox {
   color: #939393;
   margin-left: 8px;
+  font-size: 13px;
 }
 .c-forms .text-checkbox a {
   color: #939393;
