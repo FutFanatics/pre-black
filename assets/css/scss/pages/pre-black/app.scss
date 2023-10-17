@@ -2,6 +2,13 @@
     background-color: $color-primary;
     padding: 60px 0px;
 
+    .item{
+        padding:0px 8px;
+        @include md{
+            padding-right: 0px;
+        }
+    }
+
     .app{
         &-title{
             font-size: 52px;

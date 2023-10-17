@@ -1472,6 +1472,14 @@ p {
   background-color: #000;
   padding: 60px 0px;
 }
+.c-app .item {
+  padding: 0px 8px;
+}
+@media (min-width: 1200px) {
+  .c-app .item {
+    padding-right: 0px;
+  }
+}
 .c-app .app-title {
   font-size: 52px;
   text-align: center;
