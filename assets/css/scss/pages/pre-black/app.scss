@@ -8,7 +8,9 @@
             text-align: center;
             color: #fff;
             font-weight: 700;
-            padding-bottom: 4px;
+            padding-bottom: 0px;
+            margin-bottom: 0px;
+            line-height: 3.5rem;
         }
         &-bottomtitle{
             font-size: 16px;
@@ -18,10 +20,12 @@
             text-align: center;
         }
         &-card{
+            border-radius: 5px;
             border: 1px solid #4B4B4B;
-            width: 150px;
-            height: 150px;
-            background-color:#111111;
+            background: rgba(37, 37, 37, 0.46);
+            width: 180px;
+            height: 180px;
+            padding: 0px 20px;
             border-radius:5px;
             display: flex;
             flex-direction: column;

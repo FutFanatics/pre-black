@@ -1327,8 +1327,9 @@ p {
 .c-marcas .marcas-name {
   text-transform: uppercase;
   color: #FFF;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
+  margin-top: 8px;
 }
 .c-marcas .marcas_slick .slick-dots {
   list-style: none;
@@ -1476,7 +1477,9 @@ p {
   text-align: center;
   color: #fff;
   font-weight: 700;
-  padding-bottom: 4px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  line-height: 3.5rem;
 }
 .c-app .app-bottomtitle {
   font-size: 16px;
@@ -1486,10 +1489,12 @@ p {
   text-align: center;
 }
 .c-app .app-card {
+  border-radius: 5px;
   border: 1px solid #4B4B4B;
-  width: 150px;
-  height: 150px;
-  background-color: #111111;
+  background: rgba(37, 37, 37, 0.46);
+  width: 180px;
+  height: 180px;
+  padding: 0px 20px;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
