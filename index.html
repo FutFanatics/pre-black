@@ -11,6 +11,7 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="assets/css/slick.css" rel="stylesheet" type="text/css">
     <link href="assets/css/pre-black.min.css" rel="stylesheet" type="text/css">
+    <script src="https://apis.google.com/js/api.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
 
@@ -78,7 +79,7 @@
                             </div>
                         </div>
                     </div>
-                    <button class="chronology-lembrete" id="btnCreateEvent">Criar lembrete</button>
+                    <button class="chronology-lembrete" onclick="authorizeAndAddEvent()">Criar lembrete</button>
                 </div>
             </div>
             
@@ -345,6 +346,46 @@
             </div>
         </div>
     </section>
+
+    <script>
+        function authorizeAndAddEvent() {
+		gapi.load('client:auth2', function () {
+		  gapi.client.init({
+			clientId: 'S840802897638-9av5ongcbv1pc6okvv6kjqjuvtp4mo72.apps.googleusercontent.com',
+			scope: 'https://www.googleapis.com/auth/calendar',
+		  }).then(function () {
+			// Autorização bem-sucedida
+			gapi.auth2.getAuthInstance().signIn().then(function () {
+			  // Adicionar o evento ao Google Calendar
+			  addEventToCalendar();
+			});
+		  });
+		});
+	  }
+	  function addEventToCalendar() {
+		var event = {
+		  'summary': 'Fut bb',
+		  'description': 'Descrição do lembrete (opcional)',
+		  'start': {
+			'dateTime': '2023-11-20T10:00:00',
+			'timeZone': 'TIMEZONE',
+		  },
+		  'end': {
+			'dateTime': '2023-11-20T11:00:00',
+			'timeZone': 'TIMEZONE',
+		  },
+		};
+	  
+		var request = gapi.client.calendar.events.insert({
+		  'calendarId': 'primary',
+		  'resource': event,
+		});
+	  
+		request.execute(function (event) {
+		  console.log('Evento criado: ' + event.htmlLink);
+		});
+	  }
+    </script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"
     integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="https://apis.google.com/js/api.js"></script>
