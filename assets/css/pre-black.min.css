@@ -1215,7 +1215,7 @@ p {
 
 .c-home {
   background: url("https://cdn.futfanatics.com.br/futfanatics-nacional/paginas-personalizadas/pre-black/background-home_mob.png?v2");
-  min-height: 60vh;
+  min-height: 50vh;
   background-size: cover;
   background-position: center;
 }
@@ -1223,6 +1223,9 @@ p {
   .c-home {
     background: url("https://cdn.futfanatics.com.br/futfanatics-nacional/paginas-personalizadas/pre-black/background-home.png?v1");
     background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 60vh;
   }
 }
 
