@@ -12,7 +12,7 @@
 		arrows: false,
 		dots: true,
 		adaptiveHeight: true,
-		slidesToShow: 12,
+		slidesToShow: 10,
 		slidesToScroll: 4,
 		responsive: [{
 			breakpoint: 768,
