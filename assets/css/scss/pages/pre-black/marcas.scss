@@ -56,6 +56,12 @@
         }
         &-img{
             width: 100%;
+            transition: ease 0.4s ;
+
+            &:hover{
+                transform: scale(1.15) ;
+
+            }
         }
     }
     .item{

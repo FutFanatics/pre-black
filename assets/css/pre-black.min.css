@@ -1363,6 +1363,10 @@ p {
 }
 .c-marcas .marcas-img {
   width: 100%;
+  transition: ease 0.4s;
+}
+.c-marcas .marcas-img:hover {
+  transform: scale(1.15);
 }
 .c-marcas .item {
   padding: 12px;
