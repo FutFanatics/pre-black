@@ -1333,6 +1333,7 @@ p {
   font-size: 13px;
   font-weight: 700;
   margin-top: 8px;
+  text-align: center;
 }
 .c-marcas .marcas_slick .slick-dots {
   list-style: none;
